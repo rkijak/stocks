@@ -10,12 +10,54 @@ from datetime import datetime, timedelta
 
 # Recession-proof sector categories
 SECTORS = {
+    # Defensive Utilities
     "utilities": ["NEE", "DUK", "SO", "D", "AEP", "XEL", "ES", "WEC", "ED", "EIX"],
+    "water_utilities": ["AWK", "WTR", "WTRG", "SJW", "AWR", "CWT", "MSEX", "YORW"],
+
+    # Consumer Defensive
     "consumer_staples": ["PG", "KO", "PEP", "WMT", "COST", "CL", "KMB", "GIS", "K", "HSY"],
-    "healthcare": ["JNJ", "UNH", "PFE", "MRK", "ABBV", "LLY", "BMY", "AMGN", "GILD", "CVS"],
-    "discount_retail": ["WMT", "COST", "DG", "DLTR", "TJX", "ROST", "BJ", "OLLI", "FIVE", "PSMT"],
-    "telecom": ["T", "VZ", "TMUS", "CMCSA", "CHTR"],
     "food_beverage": ["KO", "PEP", "MDLZ", "KHC", "GIS", "CPB", "SJM", "CAG", "HRL", "TSN"],
+    "household_products": ["PG", "CL", "CHD", "CLX", "KMB", "SPB", "EPC", "CENT"],
+
+    # Retail
+    "discount_retail": ["WMT", "COST", "DG", "DLTR", "TJX", "ROST", "BJ", "OLLI", "FIVE", "PSMT"],
+    "grocery": ["KR", "ACI", "SFM", "GO", "NGVC", "WMK", "VLGEA"],
+
+    # Healthcare
+    "healthcare": ["JNJ", "UNH", "PFE", "MRK", "ABBV", "LLY", "BMY", "AMGN", "GILD", "CVS"],
+    "pharmaceuticals": ["PFE", "MRK", "ABBV", "LLY", "BMY", "AMGN", "GILD", "VTRS", "TAK", "NVO"],
+    "health_insurance": ["UNH", "ELV", "CI", "HUM", "CNC", "MOH"],
+
+    # Telecom & Communication
+    "telecom": ["T", "VZ", "TMUS", "CMCSA", "CHTR"],
+
+    # Real Estate (Defensive REITs)
+    "reits_healthcare": ["WELL", "VTR", "OHI", "PEAK", "HR", "DOC", "SBRA", "LTC"],
+    "reits_residential": ["AVB", "EQR", "ESS", "MAA", "UDR", "CPT", "INVH", "AMH"],
+    "reits_essential": ["O", "WPC", "NNN", "ADC", "STOR", "FCPT", "EPRT"],
+
+    # Financial (Defensive)
+    "insurance": ["BRK-B", "PGR", "ALL", "TRV", "CB", "MET", "PRU", "AFL", "AIG", "HIG"],
+    "regional_banks": ["USB", "PNC", "TFC", "FITB", "RF", "KEY", "CFG", "MTB", "HBAN"],
+
+    # Infrastructure & Industrial
+    "waste_management": ["WM", "RSG", "WCN", "CWST", "GFL", "CLH", "SRCL"],
+    "defense_aerospace": ["LMT", "RTX", "NOC", "GD", "BA", "LHX", "HII", "TXT", "LDOS"],
+    "railroads": ["UNP", "CSX", "NSC", "CP", "CNI"],
+    "infrastructure": ["AMT", "CCI", "SBAC", "NEE", "AEP", "PCG", "SRE", "WMB", "KMI"],
+
+    # Energy (Defensive - Pipelines/Storage)
+    "midstream_energy": ["EPD", "ET", "MPLX", "WMB", "KMI", "OKE", "TRGP", "PAA"],
+
+    # Precious Metals (Recession Hedge)
+    "gold_miners": ["NEM", "GOLD", "AEM", "FNV", "WPM", "RGLD", "KGC", "AGI"],
+
+    # Dividend Aristocrats (25+ years of dividend growth)
+    "dividend_aristocrats": ["JNJ", "PG", "KO", "PEP", "MMM", "ABT", "ABBV", "MCD",
+                            "WMT", "XOM", "CVX", "CL", "EMR", "GPC", "ITW", "SWK"],
+
+    # Sin Stocks (Recession-resistant vices)
+    "sin_stocks": ["MO", "PM", "BTI", "STZ", "BF-B", "DEO", "TAP", "SAM", "WYNN", "LVS"],
 }
 
 
@@ -223,7 +265,7 @@ def main():
 
     while True:
         try:
-            choice = input("\nSelect category (0-7): ").strip()
+            choice = input(f"\nSelect category (0-{len(SECTORS)+1}): ").strip()
             if choice == "0":
                 print("Goodbye!")
                 break
