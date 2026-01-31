@@ -58,6 +58,47 @@ SECTORS = {
 
     # Sin Stocks (Recession-resistant vices)
     "sin_stocks": ["MO", "PM", "BTI", "STZ", "BF-B", "DEO", "TAP", "SAM", "WYNN", "LVS"],
+
+    # Small/Mid-Cap Defense Contractors (competing for US contracts)
+    "defense_smallcap": [
+        "KTOS",   # Kratos Defense - drones, unmanned systems, missile defense
+        "MRCY",   # Mercury Systems - defense electronics, processing
+        "AVAV",   # AeroVironment - tactical drones, loitering munitions
+        "BWXT",   # BWX Technologies - nuclear components, reactors
+        "PSN",    # Parsons Corp - defense engineering, cybersecurity
+        "CACI",   # CACI International - defense IT, intel services
+        "SAIC",   # Science Applications - defense IT services
+        "BAH",    # Booz Allen Hamilton - defense consulting
+        "AJRD",   # Aerojet Rocketdyne - rocket propulsion (being acquired)
+        "TDG",    # TransDigm - aerospace components
+        "HEI",    # HEICO - aircraft replacement parts
+        "CW",     # Curtiss-Wright - defense components
+        "MOG-A",  # Moog Inc - flight controls, defense systems
+        "PLTR",   # Palantir - defense data analytics, AI
+        "RKLB",   # Rocket Lab - small launch vehicles, space
+        "RDW",    # Redwire - space infrastructure
+        "IRDM",   # Iridium - satellite communications
+        "GILT",   # Gilat Satellite - satellite networking
+        "VSAT",   # Viasat - defense communications
+        "AXON",   # Axon - law enforcement tech (adjacent)
+        "SWBI",   # Smith & Wesson - firearms
+        "RGR",    # Sturm Ruger - firearms
+        "POWW",   # AMMO Inc - ammunition
+        "AAXN",   # Axon Enterprise
+    ],
+
+    # Space & Hypersonics (emerging defense tech)
+    "defense_space": [
+        "RKLB",   # Rocket Lab
+        "LUNR",   # Intuitive Machines - lunar landers
+        "RDW",    # Redwire - space manufacturing
+        "MNTS",   # Momentus - space transport
+        "BKSY",   # BlackSky - satellite imagery intel
+        "PL",     # Planet Labs - earth imaging
+        "ASTS",   # AST SpaceMobile - space-based cellular
+        "IRDM",   # Iridium
+        "SPIR",   # Spire Global - satellite data
+    ],
 }
 
 
